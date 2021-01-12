@@ -24,4 +24,6 @@ public class PlayController : MonoBehaviour {
      private Vector2 moveVelocity;
 
 ## 12/11/2020
-I had a problem with my second tutorial which was my 2D Enemy AI Follow tutorial. The problem that i encountered was that the enemy wouldn't follow the player even when I tagged the player with the "Player" tag. The enemy didn't follow the player because in the script where it said target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); I wrote "player" instead of "Player"
+I had a problem with my second tutorial which was my 2D Enemy AI Follow tutorial. The problem that i encountered was that the enemy wouldn't follow the player even when I tagged the player with the "Player" tag. The enemy didn't follow the player because in the script where it said target = "GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();" I wrote "player" instead of "Player". I fixed this by putting "Play" in the line "GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();"
+
+## 14/11/20
