@@ -4,6 +4,9 @@
 ## 10/11/2020
 I have learned how to create a repository
 
+## 12/11/2020
+I have learnt how to use "#" to highlight what is important in the readme file.
+
 ## 13/11/2020
 I started to learn how to use raycast to dettect object because I needed to use this for my grappling hook/flying script. I found that raycast needed collider to work.
 
@@ -170,4 +173,79 @@ public void UpdateUI()
             Door.SetActive (true);
         }
        
+    }
+ 
+ ## 6/12/2020
+ I tried to use true or false function to make my animation worked and after sometimes of trying to make it work, I managed to make the animation played whenever a key is pressed.
+ 
+ void Update()
+    {
+    
+        if (Input.GetKey("w"))
+        {
+            myAnimator.SetBool("istheplayermoving", true);
+        }
+
+        if (!Input.GetKey("w"))
+        {
+            myAnimator.SetBool("istheplayermoving", false);
+        }
+
+        if (Input.GetKey("s"))
+        {
+            myAnimator.SetBool("istheplayermovingback", true);
+        }
+
+        if (!Input.GetKey("s"))
+        {
+            myAnimator.SetBool("istheplayermovingback", false);
+        }
+
+        if (Input.GetKey("a"))
+        {
+            myAnimator.SetBool("istheplayermovingleft", true);
+        }
+
+        if (!Input.GetKey("a"))
+        {
+            myAnimator.SetBool("istheplayermovingleft", false);
+        }
+
+        if (Input.GetKey("d"))
+        {
+            myAnimator.SetBool("istheplayermovingright", true);
+        }
+
+        if (!Input.GetKey("d"))
+        {
+            myAnimator.SetBool("istheplayermovingright", false);
+        }
+
+
+        if (Input.GetKey("space"))
+        {
+            myAnimator.SetBool("istheplayerjumping", true);
+        }
+
+        if (!Input.GetKey("space"))
+        {
+            myAnimator.SetBool("istheplayerjumping", false);
+        }
+
+        if (Input.GetAxis("Jump") != 0 && grounded == true)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, JumpSpeed, rb.velocity.z);
+            anim.SetTrigger("space");
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            myAnimator.SetBool("isflying", true);
+        }
+
+        if (!Input.GetKey(KeyCode.Mouse0))
+        {
+            myAnimator.SetBool("isflying", false);
+
+        }
     }
